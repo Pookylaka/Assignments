@@ -1,6 +1,6 @@
 import random
 
-message = input('text to encrypt: ')
+message = input('Text to Encrypt: ')
 
 def clean_text(t):
 
@@ -11,7 +11,7 @@ def clean_text(t):
 
 text = clean_text(message)
 
-def generatekey(message):
+def generate(message):
 
     key = ""
     alphabet = list("abcdefghijklmnopqrstuvwyxz")
@@ -21,7 +21,7 @@ def generatekey(message):
 
     return key
 
-key = generatekey(text)
+key = generate(text)
 
 print ("Key: " + key)
 
@@ -38,7 +38,7 @@ def encrypt(message, key):
 
 encryptq = encrypt(text, key)
 
-print("Encrypted: " + encryptq)
+print("Encrypted Message: " + encryptq)
 
 def decrypt(encryptedm, key):
 
