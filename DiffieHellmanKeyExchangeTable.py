@@ -1,4 +1,5 @@
 import random
+import pandas as pd 
 import math
 
 
@@ -86,3 +87,15 @@ AS = (B ** a) %p #A's Secret
 print("Alices Secret: ", AS)
 BS = (A ** b) %p
 print("Bob's Secret: ", BS)
+
+df = pd.DataFrame({
+    "Alice": [g, p, A, B, AS],
+    "Eve": [g, p, A, B, ((g ** A) % p) ** B],
+    "Bob": [g, p, A, B, BS]
+})
+df.style \
+  .format(precision=3, thousands=".", decimal=",") \
+  .format_index(str.upper, axis=1) \
+  .relabel_index(["g", "p", "A", "B", "S"], axis=0)
+
+print(df) 
