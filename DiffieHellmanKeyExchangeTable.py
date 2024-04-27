@@ -31,11 +31,11 @@ def isPrime(number):
 
 def generatePrime():
     
-    num = random.randint(2, 1000)
+    num = random.randint(10, 1000)
     
     while not isPrime(num):
         
-        num = random.randint(2, 1000)
+        num = random.randint(10, 1000)
     
     return num
 
